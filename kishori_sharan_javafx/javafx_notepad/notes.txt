@@ -1,0 +1,69 @@
+set PATH_TO_FX="C:\Program Files\Java\javafx-sdk-11.0.2\lib"
+javac --module-path %PATH_TO_FX% --add-modules javafx.controls hello.java
+java --module-path %PATH_TO_FX% --add-modules javafx.controls hello
+javac --module-path %PATH_TO_FX% --add-modules javafx.controls hello.java
+
+ObservableList<>
+IS a java.util.List and an Observable with change notifications
+
+The addListener() and removeListener() allow you to add and remove ListChangeListeners
+
+If you want to receive notifications when changes occur in ObservableList , you need to add a ListChangeListener interface whose onChanged() 
+is called
+You can add or remove invalidation listeners to or from ObservableList using
+void addListener(InvalidationListener listener) 
+void removeListener(InvalidationListener listener)
+
+Creating an ObservableList of String
+
+ObservableList<String> emptyList = FXCollections.emptyObservableList(); 
+
+A complete example of Observing an ObservableList for changes
+Here we are working with an ObservableList of Person objects
+The person class has two properties:firstName and lastName
+Both properties are of the StringProperty type
+
+ObservableList<String> list = FXCollections.observableArrayList();
+
+//Adding a ChangeListener to an ObservableList
+
+list.addListener(new ListChangeListener<String>)
+{
+	@Override
+	public void onChanged(ListChangeListener.Change<? extends String> change)
+	{
+		while(change.next())
+		{
+			//Process the current change
+		}
+	}
+}
+
+Managing Stages
+The Screen class in the javafx.stage package is used to get the details , for example , dots per inch
+
+If multiple screens are hooked up to a comp , one of the screens is known as the primary screen.
+
+//Get the reference to the Primary Stage
+Screen primaryScreen = Screen.getPrimary();
+
+The static getScreens() returns an ObservableList of Screen Objects
+
+ObservableList<Screen> screenList = Screen.getScreens();
+
+//Types of stages in javafx
+
+Decorated
+Undecorated
+Transparent
+Unified
+Utility
+
+Model View Controller Pattern
+
+Model majorly deals with already entered data that needs to get to the db  ,and also allow this data to be viewed
+Controller majorly is for allwing the user to enter the keyboard , mouse
+View is for the presentation
+The model notifies the controller abt changes in its state and view displays the updated data.
+
+What is the function of a constructor?

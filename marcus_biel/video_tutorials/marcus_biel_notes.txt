@@ -1,0 +1,16 @@
+Class Object
+    Is the super class of all objects in the java universe
+What is the java Collections framework
+    It is a library , a toolbox , of generic interfaces and classes.
+    List<String> myList = new ArrayList<String>(100);
+    Here we tell the compiler that myList variable will never have
+    any values other than a list of String objects..
+    Also note the use of the List type instead of ArrayList.This makes the 
+    code more flexible.You will only create the object once 
+    and end up using it in many places
+When you declare an ArrayList as List you can later on change
+the ArrayList to a LinkedList by simply 
+
+Collection<String> myList = new ArrayList<String>(100);
+ArrayList is the default value for List
+When declaring List it is always a good idea to use ArrayList because it makes it more flexible
